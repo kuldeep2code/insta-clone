@@ -3,6 +3,7 @@ import "package:flutter_svg/flutter_svg.dart";
 import "package:insta_clone/resources/auth_methods.dart";
 import "package:insta_clone/screens/register_screen.dart";
 import "package:insta_clone/utils/colors.dart";
+import "package:insta_clone/utils/global_variables.dart";
 import "package:insta_clone/utils/util.dart";
 
 import "../responsive/mobile_layout.dart";
@@ -55,7 +56,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: SafeArea(
           child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 32),
+        padding: MediaQuery.of(context).size.width > webScreenSize
+            ? EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 3)
+            : const EdgeInsets.symmetric(horizontal: 32),
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

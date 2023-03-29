@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         title: 'Insta Clone',
         theme: ThemeData.dark()
             .copyWith(scaffoldBackgroundColor: mobileBackgroundColor),
-        // home:,
+        // home: const LoginScreen(),
         home: StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
